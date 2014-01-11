@@ -32,7 +32,7 @@ int main (int argc, char ** argv)
 		cliaddr_len = sizeof(cliaddr);
 		connfd = accept(listenfd, (struct sockaddr *)&cliaddr, &cliaddr_len);
 		n = read(connfd, buf,MAXLINE);
-		//printf("server addr is %s\n", servaddr.sin_addr);
+		printf("client addr is %d\n", cliaddr.sin_addr.s_addr);
 		printf("received from %s at PORT %d\n", 
 				inet_ntop(AF_INET, &cliaddr.sin_addr, str, sizeof(str)), 
 				ntohs(cliaddr.sin_port));
